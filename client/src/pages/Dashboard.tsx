@@ -137,7 +137,7 @@ export function Dashboard() {
             <div className="flex justify-between">
               <span className="text-gray-600 dark:text-gray-300">Node.js Version:</span>
               <span className="text-gray-900 dark:text-white font-medium">
-                {process?.version || "Unknown"}
+                v20.x
               </span>
             </div>
           </div>
