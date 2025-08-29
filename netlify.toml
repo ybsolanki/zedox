@@ -1,0 +1,35 @@
+# Netlify configuration for frontend deployment
+# This file configures Netlify to build and deploy only the React dashboard
+
+[build]
+  # Build command - builds the frontend React app
+  command = "npm run build"
+  # Directory to publish - where Vite outputs the built frontend
+  publish = "dist/public"
+
+[build.environment]
+  # Set production environment
+  NODE_ENV = "production"
+  # Add any frontend environment variables here
+  # VITE_API_URL = "https://your-backend-api.com"
+
+# SPA redirect - ensures React Router works properly
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Optional: Custom headers for security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Optional: Cache static assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
