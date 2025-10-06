@@ -5,11 +5,13 @@ Your Discord bot is a full-stack application that includes:
 - A React web dashboard
 - PostgreSQL database integration
 
-## ❌ Why Netlify Won't Work
+## ❌ Why Netlify Won't Work (For Full Application)
 Netlify is designed for static websites and serverless functions. Your Discord bot needs to:
 - Maintain a persistent connection to Discord
 - Run continuously 24/7
 - Handle real-time events
+
+> **📖 Want to use Netlify anyway?** See [NETLIFY-DEPLOYMENT.md](./NETLIFY-DEPLOYMENT.md) for options to deploy just the frontend dashboard to Netlify while hosting the Discord bot elsewhere.
 
 ## ✅ Recommended Hosting Platforms
 
